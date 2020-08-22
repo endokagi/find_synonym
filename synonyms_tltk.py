@@ -19,7 +19,7 @@ def find_synonyms(path_folder,namefile):
         bar.next()
     bar.finish()   
     fieldnames = ['word','synonyms','tf-idf-pos','tf-idf-neg','tf-idf-val','node-label']
-    rw.write_data_by_columns(f"./synonyms/{path_folder}/{namefile}.csv", fieldnames, word)
+    rw.write_data_by_columns(f"./synonyms/tltk/{path_folder}/{namefile}.csv", fieldnames, word)
 
 def transform(word):
     word = word.replace('(*', '')
@@ -30,6 +30,6 @@ def transform(word):
     return word
 
 def main():
-    find_synonyms('max_range_3','tfidf_p90_t7')
+    find_synonyms('max_range_3','tfidf_p95_t7')
     
 main()
