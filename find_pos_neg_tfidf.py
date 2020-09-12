@@ -7,7 +7,7 @@ pos = []
 pair = []
 
 def main():
-    file = rw.get_data(f'./patong_tfidf_p95_type7.csv')
+    file = rw.get_data(f'./max_range_3/tfidf_p95_t7.csv')
     max = len(file)
     bar = IncrementalBar(f'Progress', max=max,
                          suffix='%(percent)d%% %(elapsed_td)s')
