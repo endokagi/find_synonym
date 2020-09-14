@@ -14,8 +14,8 @@ def main():
     
     for row in file:
         word = row["word"]
-        tfidf_neg = row["tf-idf-pos"]
-        tfidf_pos = row["tf-idf-neg"]
+        tfidf_neg = row["tf-idf-neg"]
+        tfidf_pos = row["tf-idf-pos"]
         tfidf_val = row["tf-idf-val"]
         node_label = row["node-label"]
         try:       
