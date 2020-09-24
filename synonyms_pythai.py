@@ -1,4 +1,4 @@
-from pythainlp.corpus.wordnet import lemmas
+from pythainlp.corpus import wordnet
 import reader_writer_csv as rw
 from progress.bar import IncrementalBar
 
@@ -10,7 +10,7 @@ def find_synonyms(path_folder,namefile):
     for row in word:
         trans_word = transform(row["word"])
         try:
-            find_synonyms = lemmas(trans_word)
+            find_synonyms = wordnet.synsets(trans_word)[0].lemma_names('tha')
             row.update({"synonyms":find_synonyms})
         except:
             pass
