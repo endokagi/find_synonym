@@ -12,6 +12,13 @@ def find_synonyms(path_folder,namefile):
         try:
             find_synonyms = wordnet.synsets(trans_word)[0].lemma_names('tha')
             row.update({"synonyms":find_synonyms})
+            synonym = row["synonyms"]
+            for cut in synonym:
+                if cut == trans_word:
+                    synonym.remove(cut)
+            if not synonym:
+                synonym = ''
+            row.update({"synonyms":synonym})
         except:
             pass
         bar.next()
